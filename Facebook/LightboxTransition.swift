@@ -19,8 +19,8 @@ class LightboxTransition: BaseTransition {
         let tabViewController = fromViewController as! UITabBarController
         let navigationController = tabViewController.selectedViewController as! UINavigationController
         let newsFeedViewController = navigationController.topViewController as! NewsFeedViewController
-        let toViewController = toViewController as! PhotoViewController
         let photoViewController = toViewController as! PhotoViewController
+
         newsFeedViewController.selectedImageView.isHidden = true
         photoViewController.imageView.isHidden = true
 
