@@ -14,9 +14,10 @@ class NewsFeedViewController: UIViewController {
     @IBOutlet weak var feedImage: UIImageView!
     @IBOutlet weak var wedding1Image: UIImageView!
     
+    var selectedImageView: UIImageView!
     
     var fadeTransition: FadeTransition!
-//    var lightboxTransition = LightboxTransition!
+    var lightboxTransition: LightboxTransition!
     
     
     override func viewDidLoad() {
@@ -43,7 +44,11 @@ class NewsFeedViewController: UIViewController {
 
 
     @IBAction func didTapPhoto1(_ sender: UITapGestureRecognizer) {
+        
+        selectedImageView = sender.view as! UIImageView
+        
         performSegue(withIdentifier: "ShowPhoto", sender: nil)
+        
     }
 
     
@@ -59,16 +64,17 @@ class NewsFeedViewController: UIViewController {
         
         let photoViewController = segue.destination as! PhotoViewController
         
+        photoViewController.image = selectedImageView.image
+        
         photoViewController.modalPresentationStyle = .custom
         
-//        lightboxTransition = LightboxTransition()
-//        lightboxTransition.duration = 4
-//        photoViewController.transitioningDelegate = lightboxTransition
-        
-        
-        fadeTransition = FadeTransition()
-        fadeTransition.duration = 0.5
-        photoViewController.transitioningDelegate = fadeTransition
+        lightboxTransition = LightboxTransition()
+        lightboxTransition.duration = 0.5
+        photoViewController.transitioningDelegate = lightboxTransition
+    
+//        fadeTransition = FadeTransition()
+//        fadeTransition.duration = 0.5
+//        photoViewController.transitioningDelegate = fadeTransition
         
         
         

@@ -101,8 +101,7 @@
 		42167652198E3220008CCBC3 /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
-				C81480291DBC092500ED2242 /* BaseTransition.swift */,
-				C814802A1DBC092500ED2242 /* FadeTransition.swift */,
+				C814802F1DBD809E00ED2242 /* Base Transitions */,
 				C814802D1DBC10B000ED2242 /* LightboxTransition.swift */,
 				42167679198ECE88008CCBC3 /* NewsFeedViewController.swift */,
 				C81480271DBC030700ED2242 /* PhotoViewController.swift */,
@@ -154,6 +153,15 @@
 				C814801E1DBBFFDA00ED2242 /* CreateCheckinViewController.swift */,
 			);
 			name = "Other View Controllers";
+			sourceTree = "<group>";
+		};
+		C814802F1DBD809E00ED2242 /* Base Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				C81480291DBC092500ED2242 /* BaseTransition.swift */,
+				C814802A1DBC092500ED2242 /* FadeTransition.swift */,
+			);
+			name = "Base Transitions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

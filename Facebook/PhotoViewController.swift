@@ -8,11 +8,25 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController {
+class PhotoViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var actionsBar: UIImageView!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var image: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        scrollView.contentSize = CGSize(width: 320, height: 569)
+        
+        scrollView.delegate = self
+
+        imageView.image = image
+        
         // Do any additional setup after loading the view.
     }
 
@@ -22,9 +36,33 @@ class PhotoViewController: UIViewController {
     }
     
     @IBAction func didPressDone(_ sender: UIButton) {
+        self.doneButton.isHidden = true
+        self.actionsBar.isHidden = true
         dismiss(animated: true, completion: nil)
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.doneButton.isHidden = true
+        self.actionsBar.isHidden = true
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        // This method is called right as the user lifts their finger
+        let yScroll = scrollView.contentOffset.y
+        
+        print("\(yScroll)")
+        
+        if yScroll < -100 {
+            dismiss(animated: true, completion: nil)
+        } else {
+            self.doneButton.isHidden = false
+            self.actionsBar.isHidden = false
+        }
+        
 
+    }
+
+    
     /*
     // MARK: - Navigation
 
