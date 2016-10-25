@@ -101,11 +101,11 @@
 		42167652198E3220008CCBC3 /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
+				42167674198EAAC6008CCBC3 /* Other View Controllers */,
 				C814802F1DBD809E00ED2242 /* Base Transitions */,
 				C814802D1DBC10B000ED2242 /* LightboxTransition.swift */,
 				42167679198ECE88008CCBC3 /* NewsFeedViewController.swift */,
 				C81480271DBC030700ED2242 /* PhotoViewController.swift */,
-				42167674198EAAC6008CCBC3 /* Other View Controllers */,
 				42167655198E3220008CCBC3 /* AppDelegate.swift */,
 				C85AE5041D9DA5F700AE4EEA /* Common.swift */,
 				42167659198E3220008CCBC3 /* Main.storyboard */,

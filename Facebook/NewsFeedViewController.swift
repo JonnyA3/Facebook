@@ -76,8 +76,6 @@ class NewsFeedViewController: UIViewController {
 //        fadeTransition.duration = 0.5
 //        photoViewController.transitioningDelegate = fadeTransition
         
-        
-        
      }
     
 

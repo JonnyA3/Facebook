@@ -18,6 +18,8 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     
     var image: UIImage!
     
+    var lightboxTransition: LightboxTransition!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +28,8 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
 
         imageView.image = image
+        
+        self.view.backgroundColor = UIColor(white: 0, alpha: 1)
         
         // Do any additional setup after loading the view.
     }
@@ -40,6 +44,13 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
         self.actionsBar.isHidden = true
         dismiss(animated: true, completion: nil)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // This method is called as the user scrolls
+        
+        self.view.backgroundColor = UIColor(white: 0, alpha: 0)
+    }
+    
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.doneButton.isHidden = true
@@ -64,13 +75,13 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
 
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
 
 }
